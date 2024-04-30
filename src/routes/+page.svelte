@@ -47,7 +47,7 @@
     box-sizing: border-box;
   }
   .box{
-    border: 1px solid rgb(174, 174, 174);
+    border: 1px solid rgb(197, 197, 197);
     border-radius: 3px;
     width: 100%;
     max-width: 350px;
@@ -68,7 +68,7 @@
   input{
     padding: 10px;
     font-size: 12px;
-    border: 1px solid rgb(174, 174, 174);
+    border: 1px solid rgb(197, 197, 197);
     outline: none;
     border-radius: 3px;
     margin-bottom: 10px;

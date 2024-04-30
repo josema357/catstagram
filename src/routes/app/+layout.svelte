@@ -1,11 +1,14 @@
 <script>
-  import heart from '$lib/assets/heart.svg';
-  import search from '$lib/assets/search.svg';
+  import heart from '$lib/assets/svg/heart.svg';
+  import search from '$lib/assets/svg/search.svg';
+  import logo from '$lib/assets/img/logo-cat.jpg';
+  import NavLateral from '$lib/components/NavLateral.svelte';
 </script>
 
 <nav>
   <div>
     <p>Catstagram</p>
+    <img class="logo" src={logo} alt="logo">
   </div>
   <div class="left-side">
     <div class="search">
@@ -16,13 +19,13 @@
   </div>
 </nav>
 <div class="layout">
-  <div>Navbar Lateral</div>
+  <NavLateral/>
   <slot></slot>
 </div>
 
 <style>
   nav{
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
     padding: 12px;
@@ -32,6 +35,11 @@
     margin: 0;
     font-size: 20px;
     font-weight: 800;
+  }
+  .logo{
+    display: none;
+    width: 35px;
+    height: 35px;
   }
   .left-side{
     display: flex;
@@ -56,9 +64,17 @@
   .layout{
     display: flex;
   }
-  @media(max-width:400px){
+  @media(max-width:750px){
+    nav {
+      display: flex;
+    }
+  }
+  @media(max-width:380px){
     nav p{
       display: none;
+    }
+    .logo{
+      display: block;
     }
   }
 </style>
