@@ -3,6 +3,7 @@
   import search from '$lib/assets/svg/search.svg';
   import logo from '$lib/assets/img/logo-cat.jpg';
   import NavLateral from '$lib/components/NavLateral.svelte';
+	import NavBottom from '../../lib/components/NavBottom.svelte';
 </script>
 
 <nav>
@@ -21,6 +22,7 @@
 <div class="layout">
   <NavLateral/>
   <slot></slot>
+  <NavBottom/>
 </div>
 
 <style>
@@ -75,6 +77,11 @@
     }
     .logo{
       display: block;
+    }
+  }
+  @media(max-width: 300px){
+    .logo{
+      display: none;
     }
   }
 </style>

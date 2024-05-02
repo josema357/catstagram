@@ -28,7 +28,7 @@
 .navLateral {
   display: flex;
   flex-direction: column;
-  width: 250px;
+  width: 240px;
   height: 100dvh;
   border: 1px solid rgb(197, 197, 197);
   padding: 12px;
@@ -44,12 +44,14 @@
   margin: 0;
   font-size: 20px;
   font-weight: 800;
+  padding-left: 12px;
 }
 .box-items {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 15px;
 }
 .logo{
   display: none;
@@ -66,7 +68,7 @@
   }
   .box-items {
     align-items: center;
-    gap: 30px;
+    
   }
   .box-logo p {
     display: none;

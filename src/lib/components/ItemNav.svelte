@@ -10,9 +10,16 @@
 
 <style>
   .item {
+    width: 100%;
     display: flex;
     align-items: flex-start;
     gap: 15px;
+    padding: 12px;
+    box-sizing: border-box;
+    border-radius: 12px;
+  }
+  .item:hover{
+    background-color: rgb(240, 240, 240);
   }
   .item img {
     width: 25px;
@@ -20,9 +27,11 @@
   }
   .item span{
     font-size: 16px;
-    font-weight: bold;
   }
   @media(max-width:1050px){
+    .item {
+      justify-content: center;
+    }
     .item span {
       display: none;
     }
