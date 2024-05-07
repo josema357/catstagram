@@ -15,11 +15,12 @@
 
 <style>
   .nav-bottom {
+    position: fixed;
+    bottom: 0;
     width: 100%;
     display: flex;
     justify-content: center;
-    position: absolute;
-    bottom: 0;
+    background-color: white;
   }
   @media(min-width: 750px){
     .nav-bottom{

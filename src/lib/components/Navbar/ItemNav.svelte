@@ -28,7 +28,7 @@
   .item span{
     font-size: 16px;
   }
-  @media(max-width:1050px){
+  @media(max-width:1200px){
     .item {
       justify-content: center;
     }

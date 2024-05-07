@@ -27,12 +27,14 @@
 <style>
 .navLateral {
   display: flex;
+  position: fixed;
   flex-direction: column;
   width: 240px;
   height: 100dvh;
   border: 1px solid rgb(197, 197, 197);
   padding: 12px;
   box-sizing: border-box;
+  background-color: white;
 }
 .box-logo{
   display: flex;
@@ -45,6 +47,9 @@
   font-size: 20px;
   font-weight: 800;
   padding-left: 12px;
+  font-family: "Pacifico", cursive;
+  font-style: normal;
+  font-weight: 400;
 }
 .box-items {
   flex: 1;
@@ -62,7 +67,7 @@
   display: flex;
   align-items: center;
 }
-@media(max-width:1050px){
+@media(max-width:1200px){
   .navLateral{
     width: 70px;
   }

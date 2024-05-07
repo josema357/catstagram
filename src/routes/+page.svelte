@@ -8,7 +8,7 @@
 </script>
 <div class="main">
   <div class="box">
-    <h1>Catstagram</h1>
+    <h1 class="box-title">Catstagram</h1>
     <section>
       <div class="box-input">
         <input type="text" placeholder="Phone number, username or email"/>
@@ -55,11 +55,13 @@
     box-sizing: border-box;
     margin-bottom: 10px;
   }
-  h1{
+  .box-title{
     font-size: 30px;
-    font-weight: 800;
     text-align: center;
     margin-bottom: 30px;
+    font-family: "Pacifico", cursive;
+    font-style: normal;
+    font-weight: 400;
   }
   .box-input{
     display: flex;
