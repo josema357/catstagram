@@ -1,28 +1,31 @@
 <script>
-  import user from "$lib/assets/svg/user-circle.svg"
   import settings from "$lib/assets/svg/three-dots.svg"
-  import cat from "$lib/assets/img/cat.webp"
   import heart from "$lib/assets/svg/heart.svg"
   import share from "$lib/assets/svg/share.svg"
   import bookmark from "$lib/assets/svg/bookmark.svg"
   import Comments from "$lib/components/Timeline/Comments.svelte"
+
+  export let id;
+  export let url;
 </script>
 
 <div class="card">
   <div class="card-container">
     <div class="card-header">
       <div class="card-user">
-        <img src={user} alt="user-logo"/>
-        <h2>User.cat</h2>
-        <span>Lima, Peru</span>
+        <img src={url} alt="user-logo"/>
+        <div class="card-name-user">
+          <p class="name-user">{id.toLowerCase()}.cat</p>
+          <p>Lima, Peru</p>
+        </div>
       </div>
       <div class="card-settings">
         <img src={settings} alt="settings-logo"/>
       </div>
     </div>
     <div class="card-photo">
-      <figure>
-        <img src={cat} alt=""/>
+      <figure class="card-photo-figure">
+        <img src={url} alt=""/>
       </figure>
     </div>
     <div class="card-icons">
@@ -35,27 +38,84 @@
       </div>
     </div>
     <div class="card-description">
-      <h3>user.cat</h3>
-      <span>Hola!</span>
+      <p>{id.toLowerCase()}.cat</p>
+      <span>Hello cat!</span>
     </div>
-    <Comments/>
+    <Comments id={id}/>
   </div>
 </div>
 
 <style>
   .card-container{
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid rgb(218, 218, 218);
     padding: 30px 0;
     max-width: 500px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
-  .card-photo{
-
+  .card-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
   }
-  figure{
+  .card-user{
+    display: flex;
+    gap: 8px;
+  }
+  .card-user img{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .name-user{
     margin: 0;
+    text-wrap: nowrap;
+    font-size: 16px;
+    font-weight: 800;
   }
-  figure > img{
+  .card-name-user p:nth-of-type(2){
+    margin: 0;
+    font-size: 10px;
+    text-wrap: nowrap;
+  }
+  .card-photo-figure{
+    margin: 0;
     width: 100%;
+  }
+  .card-photo-figure > img{
+    width: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+  .card-icons{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .icons-left{
+    display: flex;
+    gap: 8px;
+  }
+  .icons-left img{
+    cursor: pointer;
+  }
+  .icons-left img:nth-of-type(2){
+    width: 20px;
+  }
+  .icons-right img{
+    width: 18px;
+  }
+  .card-description{
+    display: flex;
+    align-items: start;
+    gap: 4px;
+  }
+  .card-description p{
+    margin: 0;
+    font-weight: 800;
   }
 </style>

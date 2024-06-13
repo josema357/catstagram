@@ -16,7 +16,8 @@
     gap: 15px;
     padding: 12px;
     box-sizing: border-box;
-    border-radius: 12px;
+    border-radius: 8px;
+    cursor: pointer;
   }
   .item:hover{
     background-color: rgb(240, 240, 240);

@@ -1,12 +1,18 @@
 <script>
   import Card from "./Card.svelte";
-  import Comments from "$lib/components/Timeline/Comments.svelte"
+  export let data = [];
+
+  console.log(data);
 </script>
 
 <div class="timeline">
   <div class="timeline-container">
-    <Card/>
-    <Card/>
+    { #each data as cat }
+      <Card {...cat}/>
+    {:else}
+      <p>Loading...</p>
+    {/each}
+    
   </div>
   <div class="timeline-side">
      --ererererere --ererererere --ererererere --ererererere --ererererere --ererererere --ererererere
