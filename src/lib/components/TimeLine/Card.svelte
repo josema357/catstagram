@@ -4,13 +4,27 @@
   import share from "$lib/assets/svg/share.svg"
   import bookmark from "$lib/assets/svg/bookmark.svg"
   import Comments from "$lib/components/Timeline/Comments.svelte"
+  import Modal from "../Modal/Modal.svelte"
+  import { blur } from "svelte/transition"
+	import Share from "../Modal/Share.svelte";
 
   export let id;
   export let url;
-</script>
 
-<div class="card">
+  let isModal = false;
+
+  function handleModal(){
+    isModal = !isModal;
+  }
+</script>
   <div class="card-container">
+    {#if isModal}
+      <div transition:blur>
+        <Modal>
+          <Share on:clik={handleModal}/>
+        </Modal>
+      </div>
+    {/if}
     <div class="card-header">
       <div class="card-user">
         <img src={url} alt="user-logo"/>
@@ -31,7 +45,7 @@
     <div class="card-icons">
       <div class="icons-left">
         <img src={heart} alt=""/>
-        <img src={share} alt=""/>
+        <img src={share} alt="" on:click={handleModal}/>
       </div>
       <div class="icons-right">
         <img src={bookmark} alt=""/>
@@ -43,7 +57,6 @@
     </div>
     <Comments id={id}/>
   </div>
-</div>
 
 <style>
   .card-container{

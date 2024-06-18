@@ -7,7 +7,7 @@
 	const API_KEY = import.meta.env.VITE_API_KEY;
 
 	onMount(async()=>{
-		const response = await fetch(`${API}images/search?size=full&page=0&limit=20&mime_types=jpg&has_breeds=true&format=json`, {
+		const response = await fetch(`${API}images/search?size=full&page=0&limit=10&mime_types=jpg&has_breeds=true&format=json`, {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json",
@@ -16,7 +16,6 @@
 		}
 		);
 		data = await response.json();
-		console.log(data)
 	})
 
 

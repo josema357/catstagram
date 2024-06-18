@@ -15,8 +15,8 @@
   </div>
   <div class="box-items">
     <ItemNav logo={house} text="Inicio"/>
+    <ItemNav logo={heart} text="Favoritos"/>
     <ItemNav logo={searchFill} text="Buscar"/>
-    <ItemNav logo={heart} text="Notificaciones"/>
     <ItemNav logo={create} text="Crear"/>
   </div>
   <div class="box-plus">

@@ -32,6 +32,7 @@
     margin: 0;
     font-weight: bold;
     font-size: 14px;
+    text-wrap: nowrap;
   }
   .comments-users span{
     font-size: 14px;

@@ -19,7 +19,7 @@
     bottom: 0;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     background-color: white;
   }
   @media(min-width: 750px){
