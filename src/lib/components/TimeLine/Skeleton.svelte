@@ -23,6 +23,7 @@
     max-width: 500px;
     width: 100%;
     padding-bottom: 32px;
+    padding-top: 30px;
   }
   .card-header{
     display: flex;

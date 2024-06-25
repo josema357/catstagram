@@ -7,12 +7,12 @@
   <div class="card-user">
     <img src={UserImage} alt="user-logo"/>
     <div class="card-name-user">
-      <p class="name-user">Usuario#000{count}</p>
-      <p>Usuario desconocido</p>
+      <p class="name-user">unknown#000{count}</p>
+      <p>User unknown</p>
     </div>
   </div>
   <div class="card-settings">
-    <p class="ver">Ver</p>
+    <p class="ver">See</p>
   </div>
 </div>
 <style>

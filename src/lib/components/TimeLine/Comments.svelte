@@ -6,12 +6,12 @@
   <div class="comments-content">
     <div class="comments-users">
       <p>{id.toLowerCase()}</p>
-      <span>hi cat - hi cat - hi cat</span>
+      <span>Beautiful cat </span>
     </div>
     <div class="comments-add">
       <form class="comments-form">
         <input type="text" class="comments-input" placeholder="Add comment..." id="text">
-        <button type="submit">Post</button>
+        <button type="button">Post</button>
       </form>
     </div>
   </div>
@@ -31,11 +31,11 @@
   .comments-users p{
     margin: 0;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 12px;
     text-wrap: nowrap;
   }
   .comments-users span{
-    font-size: 14px;
+    font-size: 12px;
   }
   .comments-form{
     display: flex;

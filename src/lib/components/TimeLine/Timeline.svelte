@@ -16,7 +16,7 @@
         <Skeleton/>
       </div>
     {/each}
-    
+    <slot></slot>
   </div>
   <div class="timeline-side">
     <UserUnknow count={21}/>
@@ -43,7 +43,7 @@
     display: flex;
     margin-left: 240px;
     scroll-behavior: auto;
-    padding: 20px 40px 20px 0;
+    padding: 0 40px 20px 0;
     box-sizing: border-box;
     justify-content: space-around;
   }
@@ -64,7 +64,7 @@
     align-items: center;
   }
   .timeline-side{
-    padding-top: 16px;
+    padding-top: 30px;
     flex: 1;
     display: flex;
     flex-direction: column;

@@ -14,13 +14,13 @@
     <img class="logo" src={logo} alt="logo">
   </div>
   <div class="box-items">
-    <ItemNav logo={house} text="Inicio"/>
-    <ItemNav logo={heart} text="Favoritos"/>
-    <ItemNav logo={searchFill} text="Buscar"/>
-    <ItemNav logo={create} text="Crear"/>
+    <ItemNav logo={house} text="Home"/>
+    <ItemNav logo={heart} text="Favourites"/>
+    <ItemNav logo={searchFill} text="Search"/>
+    <ItemNav logo={create} text="Create"/>
   </div>
   <div class="box-plus">
-    <ItemNav logo={list} text="Mas"/>
+    <ItemNav logo={list} text="More"/>
   </div>
 </div>
 

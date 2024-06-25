@@ -4,33 +4,40 @@
   import share from "$lib/assets/svg/share.svg"
   import bookmark from "$lib/assets/svg/bookmark.svg"
   import Comments from "$lib/components/Timeline/Comments.svelte"
-  import Modal from "../Modal/Modal.svelte"
-  import { blur } from "svelte/transition"
-	import Share from "../Modal/Share.svelte";
 
   export let id;
   export let url;
+  export let width;
+  export let height;
+  export let breeds;
 
-  let isModal = false;
+  const API = "https://api.thecatapi.com/v1/";
+	const API_KEY = import.meta.env.VITE_API_KEY;
 
-  function handleModal(){
-    isModal = !isModal;
+  const dataPost = {
+    "image_id": id
   }
+
+  async function handlerFavourite(){
+    await fetch(`${API}favourites`, {
+      method: "POST",
+      body: JSON.stringify(dataPost),
+      headers: {
+        "Content-Type": "application/json",
+        "x-api-key": API_KEY
+      }
+    })
+    .catch((error) => console.error("Error:", error))
+  }
+
 </script>
   <div class="card-container">
-    {#if isModal}
-      <div transition:blur>
-        <Modal>
-          <Share on:clik={handleModal}/>
-        </Modal>
-      </div>
-    {/if}
     <div class="card-header">
       <div class="card-user">
         <img src={url} alt="user-logo"/>
         <div class="card-name-user">
-          <p class="name-user">{id.toLowerCase()}.cat</p>
-          <p>Lima, Peru</p>
+          <p class="name-user">{breeds[0].name}.{id.toLowerCase()}</p>
+          <p>Origin, {breeds[0].origin}</p>
         </div>
       </div>
       <div class="card-settings">
@@ -44,16 +51,21 @@
     </div>
     <div class="card-icons">
       <div class="icons-left">
-        <img src={heart} alt=""/>
-        <img src={share} alt="" on:click={handleModal}/>
+        <figure on:click={handlerFavourite}>
+          <img src={heart} alt=""/>
+        </figure>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://catstagram.com" target="_blank">
+          <img src={share} alt=""/>
+        </a>
       </div>
       <div class="icons-right">
-        <img src={bookmark} alt=""/>
+        <a href={breeds[0].wikipedia_url} target="_blank">
+          <img src={bookmark} alt=""/>
+        </a>
       </div>
     </div>
     <div class="card-description">
-      <p>{id.toLowerCase()}.cat</p>
-      <span>Hello cat!</span>
+      <p><span>{breeds[0].name}.{id.toLowerCase()}</span> {breeds[0].description}</p>
     </div>
     <Comments id={id}/>
   </div>
@@ -84,6 +96,9 @@
     border-radius: 50%;
     object-fit: cover;
   }
+  figure{
+    margin: 0;
+  }
   .name-user{
     margin: 0;
     text-wrap: nowrap;
@@ -111,24 +126,28 @@
   }
   .icons-left{
     display: flex;
-    gap: 8px;
+    gap: 10px;
   }
-  .icons-left img{
+  .icons-left figure{
     cursor: pointer;
   }
-  .icons-left img:nth-of-type(2){
+  .icons-left a img{
     width: 20px;
   }
   .icons-right img{
     width: 18px;
+    cursor: pointer;
   }
   .card-description{
     display: flex;
     align-items: start;
     gap: 4px;
+    font-size: 12px;
   }
   .card-description p{
     margin: 0;
+  }
+  .card-description span{
     font-weight: 800;
   }
 </style>

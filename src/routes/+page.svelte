@@ -3,7 +3,7 @@
 </svelte:head>
 <script>
   function redirect(){
-    window.location.href="/app/inicio";
+    window.location.href="/app/home";
   }
 </script>
 <div class="main">
