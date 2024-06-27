@@ -3,7 +3,7 @@
   import heart from "$lib/assets/svg/heart.svg"
   import share from "$lib/assets/svg/share.svg"
   import bookmark from "$lib/assets/svg/bookmark.svg"
-  import Comments from "$lib/components/Timeline/Comments.svelte"
+  import Comments from "./Comments.svelte"
 
   export let id;
   export let url;
